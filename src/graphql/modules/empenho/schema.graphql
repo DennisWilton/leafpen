@@ -1,0 +1,29 @@
+type Empenho {
+  _id: ID!
+  codigo: String!
+  valor: Int!
+  tags: [String]
+  active: Boolean
+  liquidacoes: [Liquidacao!]!
+}
+
+input EmpenhoInput {
+  codigo: String!
+  valor: Int!
+  tags: [String]
+}
+
+type Query {
+  empenhos: [Empenho!]!
+  empenho(id: ID!): Empenho!
+}
+
+type Mutation {
+  empenhoCreate(data: EmpenhoInput!): Empenho!
+  empenhoUpdate(id: ID!, data: EmpenhoInput!): Empenho!
+  empenhoDelete(id: ID!): Boolean
+}
+
+type Subscription {
+  empenhoCreated: Empenho!
+}

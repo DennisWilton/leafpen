@@ -1,0 +1,30 @@
+type Liquidacao {
+  _id: ID!
+  codigo: String!
+  valor: Int!
+  tags: [String]
+  active: Boolean
+  empenho: Empenho!
+}
+
+input LiquidacaoInput {
+  codigo: String!
+  valor: Int!
+  tags: [String]
+  empenho: ID!
+}
+
+type Query {
+  liquidacoes: [Liquidacao!]!
+  liquidacao(id: ID!): Liquidacao!
+}
+
+type Mutation {
+  liquidacaoCreate(data: LiquidacaoInput!): Liquidacao!
+  liquidacaoUpdate(id: ID!, data: LiquidacaoInput!): Liquidacao!
+  liquidacaoDelete(id: ID!): Boolean
+}
+
+type Subscription {
+  liquidacaoCreated: Liquidacao!
+}

@@ -1,0 +1,11 @@
+{
+  "DATABASE": {
+    "HOST": "geonosis.mongodb.umbler.com:49233",
+    "USERNAME": "inforiver",
+    "PASSWORD": "admin123",
+    "DBNAME": "inforiver"
+  },
+  "SERVER": {
+    "PORT": 4000
+  }
+}
